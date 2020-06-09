@@ -1,0 +1,18 @@
+body {
+    margin:0;
+    padding: 0;
+}
+.fs-10 {
+    font-size: 14px;
+    list-style: none;
+    margin: 2px 0;
+}
+
+.bubbles {
+    padding: 8px;
+    font-family: sans-serif;
+    font-weight: 100;
+    letter-spacing: -0.5px;
+    min-width: 260px;
+    /*background: red;*/
+}
