@@ -1,0 +1,254 @@
+/* 초기셋팅 */
+@charset "utf-8";
+*, :after, :before {-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+html {font-size: 10px}
+body {margin:0;padding:0;font-size: 1.6rem;font-family: Noto Sans KR, sans-serif}
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
+h1, h2, h3, h4, h5, h6 {font-size:1.4rem}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:flex}
+ul, dl,dt,dd {margin:0;padding:0;list-style:none;font-weight:normal}
+legend {margin:0;padding:0;font-size:0;line-height:0}
+label, input, button, select, img {vertical-align:middle;font-size:1rem}
+input, button {margin:0;padding:0;font-size:1rem}
+input[type="submit"] {cursor:pointer}
+button {cursor:pointer;outline:none;background:transparent;border:none}
+::-webkit-input-placeholder {color:#000}
+::-ms-input-placeholder {color:#000}
+::placeholder {color:#000}
+textarea {font-size:1rem}
+textarea, select {font-size:1rem}
+select {margin:0}
+p {margin:0;padding:0;word-break:break-all}
+hr {display:none}
+pre {overflow-x:scroll;font-size:1rem}
+a {color:#000;text-decoration:none}
+a:hover {color:inherit;text-decoration:none}
+em {font-style:normal}
+input[type=text],input[type=password], textarea {-webkit-transition:all 0.30s ease-in-out;-moz-transition:all 0.30s ease-in-out;-o-transition:all 0.30s ease-in-out;outline:none}
+th, strong {font-weight:normal}
+
+/* 폰트 정의 */
+
+@font-face {font-family:'Noto Sans KR';font-style:normal;font-weight:100;src:url('../fonts/NotoSansKR-Thin.woff2')}
+@font-face {font-family:'Noto Sans KR';font-style:normal;font-weight:200;src:url('../fonts/NotoSansKR-Thin.woff2')}
+@font-face {font-family:'Noto Sans KR';font-style:normal;font-weight:300;src:url('../fonts/NotoSansKR-Light.woff2')}
+@font-face {font-family:'Noto Sans KR';font-style:normal;font-weight:400;src:url('../fonts/NotoSansKR-Light.woff2')}
+@font-face {font-family:'Noto Sans KR';font-style:normal;src:url('../fonts/NotoSansKR-Regular.woff2')}
+@font-face {font-family:'Noto Sans KR';font-style:normal;font-weight:600;src:url('../fonts/NotoSansKR-Medium.woff2')}
+@font-face {font-family:'Noto Sans KR';font-style:normal;font-weight:700;src:url('../fonts/NotoSansKR-Bold.woff2')}
+@font-face {font-family:'Noto Sans KR';font-style:normal;font-weight:bold;src: url('../fonts/NotoSansKR-Bold.woff2')}
+@font-face {font-family:'Noto Sans KR';font-style:normal;font-weight:800;src: url('../fonts/NotoSansKR-Bold.woff2')}
+@font-face {font-family:'Noto Sans KR';font-style:normal;font-weight:900;src: url('../fonts/NotoSansKR-Black.woff2')}
+
+/* 공통 css */
+.d-block{display: block !important}
+.d-inline-block{display: inline-block !important}
+.d-flex{display: flex !important}
+.al-center{align-items: center !important;}
+.jt-center{justify-content: center !important;}
+.f1 {flex:1}
+.f2 {flex:2}
+.f3 {flex:3}
+.f4 {flex:4}
+.f5 {flex:5}
+.f6 {flex:6}
+.t-left {text-align: left !important}
+.t-center {text-align: center !important}
+.t-right {text-align: right !important}
+.blind {position: absolute !important; top:0 !important;width:1px !important;height:1px !important;font-size:1px !important;line-height:0 !important;color:transparent !important;opacity:0 !important;overflow: hidden !important}
+.f11 {font-size:11px}
+.f12 {font-size:12px !important}
+.f17 {font-size:17px !important}
+.inpPwMin {font-size:10px; padding:0; text-align:center;}
+.pointColor {color:#3d9bff !important}
+.pointColor2 {color:#f44336 !important}
+.pointColor3 {color:#000 !important}
+.pointColor4 {color:#3b5997 !important}
+.pointColor5 {color:#f4670a !important}
+.pointColor6 {color:#046fd9 !important}
+.pointColor7 {color:#046fd9 !important}
+.pointColor8 {color:#f4670a !important}
+.pointColor9 {color:#666 !important}
+.bdl {border-left: 1px solid #e5e5e5 !important}
+.bdr {border-right: 1px solid #e5e5e5 !important}
+.bdt {border-top: 1px solid #e5e5e5 !important}
+.bdb {border-bottom: 1px solid #e5e5e5 !important}
+.bdtNone {border-top: none !important}
+.bdbNone {border-bottom: none !important}
+.bdlNone {border-left: none !important}
+.bdrNone {border-right: none !important}
+.bdtPoint {border-top: 1px solid #999 !important}
+.bdbPoint {border-bottom: 1px solid #999 !important}
+.fl {float:left !important}
+.fr {float:right !important}
+.fn {float:none !important}
+.cl {clear:both}
+.clfix {overflow:hidden}
+.block {display: block !important}
+.blockTbl {display: table !important}
+.none {display: none !important}
+.inblock {display: inline-block !important}
+.blockNone {display: none !important}
+.underLine {text-decoration: underline !important}
+.mg0 {margin: 0 !important}
+.mt0 {margin-top: 0 !important}
+.mt5 {margin-top: 5px !important}
+.mt7 {margin-top: 7px !important}
+.mt10 {margin-top: 10px !important}
+.mt15 {margin-top: 15px !important}
+.mt20 {margin-top: 20px !important}
+.mt25 {margin-top: 25px !important}
+.mt30 {margin-top: 30px !important}
+.mt35 {margin-top: 35px !important}
+.mt41 {margin-top: 41px !important}
+.mt40 {margin-top: 40px !important}
+.mt45 {margin-top: 45px !important}
+.mt50 {margin-top: 50px !important}
+.mt60 {margin-top: 60px !important}
+.mb0  {margin-bottom: 0 !important}
+.mb5  {margin-bottom: 5px !important}
+.mb10 {margin-bottom: 10px !important}
+.mb15 {margin-bottom: 15px !important}
+.mb20 {margin-bottom: 20px !important}
+.mb25 {margin-bottom: 25px !important}
+.mb30 {margin-bottom: 30px !important}
+.mb35 {margin-bottom: 35px !important}
+.mb40 {margin-bottom: 40px !important}
+.mb45 {margin-bottom: 45px !important}
+.mb50 {margin-bottom: 50px !important}
+.mb50 {margin-bottom: 50px !important}
+.ml5 {margin-left: 5px !important}
+.ml10 {margin-left: 10px !important}
+.ml-auto{margin-left: auto !important}
+.mr-auto{margin-right: auto !important}
+.pt0{padding-top:0 !important}
+.pb0{padding-bottom:0 !important}
+.pd0 {padding:0 !important}
+.pd10 {padding:0 10px}
+.pd17 {padding: 0 17px}
+.pt20 {padding-top:20px !important}
+.mb0 {margin-bottom: 0px !important}
+.pl0 {padding-left:0 !important}
+.pl5 {padding-left:5px !important}
+.pl10 {padding-left:10px !important}
+.pr5 {padding-right:5px !important}
+.pr10 {padding-right:10px !important}
+.pr50 {padding-right:50px !important}
+.plr10 {padding:0 10px !important}
+.ptb10 {padding-top:10px !important;padding-bottom:10px !important}
+.pt50 {padding-top: 50px !important}
+.pb20 {padding-bottom: 20px !important}
+.pb50 {padding-bottom: 50px !important}
+.ls0 {letter-spacing:0px !important}
+.ls005 {letter-spacing:-0.5px !important}
+.ls01 {letter-spacing:-1px !important}
+.ls015 {letter-spacing:-1.5px !important}
+.ls02 {letter-spacing:-2px !important}
+.vam {vertical-align: middle !important}
+.va0 {vertical-align: 0 !important}
+.lh2 {line-height:2 !important}
+.w120 {width:120px !important}
+.w100 {width:100px !important}
+.w60 {width:60px !important}
+.w30 {width:30px !important}
+.w25p {width:25% !important}
+.w35p {width:35% !important}
+.w40p {width:40% !important}
+.w70p {width:70% !important}
+.w30p {width:30% !important}
+.w100p {width:100% !important}
+.fwB {font-weight:bold !important}
+.fwN {font-weight:normal !important}
+.w-100 {width:100% !important}
+.p-5 {padding:5px !important}
+.p-10 {padding:10px !important}
+.p-15 {padding:15px !important}
+.p-20 {padding:20px !important}
+.p-25 {padding:25px !important}
+.p-30 {padding:30px !important}
+.m-5 {margin:5px !important}
+.m-10 {margin:10px !important}
+.m-15 {margin:15px !important}
+.m-20 {margin:20px !important}
+.m-25 {margin:25px !important}
+.m-30 {margin:30px !important}
+.minw-5 {min-width:5px !important}
+.minw-10 {min-width:10px !important}
+.minw-15 {min-width:15px !important}
+.minw-20 {min-width:20px !important}
+.minw-25 {min-width:25px !important}
+.minw-30 {min-width:30px !important}
+.minw-35 {min-width:35px !important}
+.minw-40 {min-width:40px !important}
+.minw-45 {min-width:45px !important}
+.minw-50 {min-width:50px !important}
+.minw-55 {min-width:55px !important}
+.minw-60 {min-width:60px !important}
+.minw-65 {min-width:65px !important}
+.minw-70 {min-width:70px !important}
+.minw-75 {min-width:75px !important}
+.minw-80 {min-width:80px !important}
+.minw-85 {min-width:85px !important}
+.minw-90 {min-width:90px !important}
+.minw-95 {min-width:95px !important}
+.minw-100 {min-width:100px !important}
+.minh-5 {min-height:5px !important}
+.minh-10 {min-height:10px !important}
+.minh-15 {min-height:15px !important}
+.minh-20 {min-height:20px !important}
+.minh-25 {min-height:25px !important}
+.minh-30 {min-height:30px !important}
+.minh-35 {min-height:35px !important}
+.minh-40 {min-height:40px !important}
+.minh-45 {min-height:45px !important}
+.minh-50 {min-height:50px !important}
+.minh-55 {min-height:55px !important}
+.minh-60 {min-height:60px !important}
+.minh-65 {min-height:65px !important}
+.minh-70 {min-height:70px !important}
+.minh-75 {min-height:75px !important}
+.minh-80 {min-height:80px !important}
+.minh-85 {min-height:85px !important}
+.minh-90 {min-height:90px !important}
+.minh-95 {min-height:95px !important}
+.minh-100 {min-height:100px !important}
+.maxw-5 {max-width:5px !important}
+.maxw-10 {max-width:10px !important}
+.maxw-15 {max-width:15px !important}
+.maxw-20 {max-width:20px !important}
+.maxw-25 {max-width:25px !important}
+.maxw-30 {max-width:30px !important}
+.maxw-35 {max-width:35px !important}
+.maxw-40 {max-width:40px !important}
+.maxw-45 {max-width:45px !important}
+.maxw-50 {max-width:50px !important}
+.maxw-55 {max-width:55px !important}
+.maxw-60 {max-width:60px !important}
+.maxw-65 {max-width:65px !important}
+.maxw-70 {max-width:70px !important}
+.maxw-75 {max-width:75px !important}
+.maxw-80 {max-width:80px !important}
+.maxw-85 {max-width:85px !important}
+.maxw-90 {max-width:90px !important}
+.maxw-95 {max-width:95px !important}
+.maxw-100 {max-width:100px !important}
+.maxh-5 {max-height:5px !important}
+.maxh-10 {max-height:10px !important}
+.maxh-15 {max-height:15px !important}
+.maxh-20 {max-height:20px !important}
+.maxh-25 {max-height:25px !important}
+.maxh-30 {max-height:30px !important}
+.maxh-35 {max-height:35px !important}
+.maxh-40 {max-height:40px !important}
+.maxh-45 {max-height:45px !important}
+.maxh-50 {max-height:50px !important}
+.maxh-55 {max-height:55px !important}
+.maxh-60 {max-height:60px !important}
+.maxh-65 {max-height:65px !important}
+.maxh-70 {max-height:70px !important}
+.maxh-75 {max-height:75px !important}
+.maxh-80 {max-height:80px !important}
+.maxh-85 {max-height:85px !important}
+.maxh-90 {max-height:90px !important}
+.maxh-95 {max-height:95px !important}
+.maxh-100 {max-height:100px !important}

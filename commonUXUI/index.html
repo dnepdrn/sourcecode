@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <!--캐시삭제 meta tag-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <!--캐시삭제 meta tag 끝-->
+    <link rel="stylesheet" href="css/default.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="js/components.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/main.js"></script>
+    <title>main</title>
+</head>
+<body>
+<div class="main-basic mt60">
+    <ul id="tabWrapper">
+        <li id="bankTab" class="active"><span>은행</span></li>
+        <li id="cardTab"><span>카드</span></li>
+        <!--<li id="stockTab"><span>증권</span></li>-->
+    </ul>
+    <div id="addAtOnce"><p><span>은행</span> 한번에 등록</p><img src="./images/icons/icon_add.svg" alt="add-icon"></div>
+    <h4 class="template-title">선택 등록</h4>
+    <div class="template"></div>
+</div>
+</body>
+</html>
+<script>
+    // 은행, 카드 샘플 데이터
+    const templateBank = [
+        {
+            bankName: '농축협',
+            bankImg: path + '/images/icons/NH.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: '우리',
+            bankImg: path + '/images/icons/woori.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: 'KB국민',
+            bankImg: path + '/images/icons/kb.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: '신한',
+            bankImg: path + '/images/icons/shinhan.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: 'KEB하나',
+            bankImg: path + '/images/icons/KEB.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: 'IBK기업',
+            bankImg: path + '/images/icons/IBK.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: 'SC제일',
+            bankImg: path + '/images/icons/SC.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: '카카오',
+            bankImg: path + '/images/icons/kakao.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: '경남',
+            bankImg: path + '/images/icons/BNK.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: '신협',
+            bankImg: path + '/images/icons/shinhyup.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: '새마을',
+            bankImg: path + '/images/icons/saemaul.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: '케이뱅크',
+            bankImg: path + '/images/icons/kbank.svg',
+            bankActive: 'N'
+        }
+    ];
+    const templateCard = [
+        {
+            bankName: '농협카드',
+            bankImg: path + '/images/cards/NH.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: '국민카드',
+            bankImg: path + '/images/cards/kb.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: '하나카드',
+            bankImg: path + '/images/cards/keb.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: '우리카드',
+            bankImg: path + '/images/cards/woori.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: 'IBK기업카드',
+            bankImg: path + '/images/cards/ibk.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: '새마을카드',
+            bankImg: path + '/images/cards/saemaul.svg',
+            bankActive: 'N'
+        },
+        {
+            bankName: 'SC제일카드',
+            bankImg: path + '/images/cards/sc.svg',
+            bankActive: 'N'
+        }
+    ];
+
+    // 데이터 템플릿 작성
+    const addTemplate = (list, type) => {
+        const templateWrapper = document.createElement('div');
+        templateWrapper.classList.add('tab-btn');
+        templateWrapper.classList.add(type);
+        templateWrapper.innerHTML = `
+        <img src='${list.bankImg}' alt='bank-img'>
+        <span>${list.bankName}</span>
+    `;
+        document.querySelector('.template').append(templateWrapper)
+    };
+
+    // 데이터 기입
+    templateBank.forEach(list => addTemplate(list, 'bank'));
+
+    // 템플릿 체크
+    const checkTemplate = () => {
+        if (document.querySelector('.template .tab-btn')) {
+            document.querySelector('.template').innerHTML = ''
+        }
+    };
+
+    // 유형별 데이터 변환
+    document.getElementById('tabWrapper').addEventListener('click', e => {
+        document.getElementById('buttonType').classList.remove('active');
+
+        if (e.target.closest('#bankTab')) {
+            checkTemplate();
+            document.querySelector('#tabWrapper li.active').classList.remove('active');
+            e.target.closest('#bankTab').classList.add('active');
+            templateBank.forEach(list => addTemplate(list, 'bank'));
+            document.querySelector('#addAtOnce > p > span').innerText = '은행'
+        } else if (e.target.closest('#cardTab')) {
+            checkTemplate();
+            document.querySelector('#tabWrapper li.active').classList.remove('active');
+            e.target.closest('#cardTab').classList.add('active');
+            templateCard.forEach(list => addTemplate(list, 'card'));
+            document.querySelector('#addAtOnce > p > span').innerText = '카드'
+        }
+    });
+
+    // 버튼 활성화 및 초기화
+    document.querySelector('.template').addEventListener('click', e => {
+        const tabBtn = e.target.closest('.tab-btn');
+
+        if (tabBtn.classList.contains('active')) {
+            tabBtn.classList.remove('active')
+        } else {
+            tabBtn.classList.add('active')
+        }
+
+        if (document.querySelector('.tab-btn.active')) {
+            document.getElementById('buttonType').classList.add('active')
+        } else {
+            document.getElementById('buttonType').classList.remove('active')
+        }
+    })
+
+</script>
+
+
